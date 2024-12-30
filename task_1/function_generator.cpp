@@ -50,7 +50,7 @@ int main(){
     fout << "int f(void) {"<< endl;
 
     for (int i = 0; i < expression.types.size(); ++i) {
-        fout << "\t" << expression.types[i] << " var" << i + 1;
+        fout << "    " << expression.types[i] << " var" << i + 1;
         int value = random() % numeric_limits<char>::max();
         if (i % 2 == 0) {
             fout << " = " << value << ";" << "\n";
@@ -64,10 +64,10 @@ int main(){
         fout << " " << expression.operations[i - 1] << " var" << i + 1;
     }
     fout << ";" << "\n";
-    fout << "\treturn 0;" << "\n";
+    fout << "    return 0;" << "\n";
     fout << "}" << "\n\n";
     fout << "int main() {" << "\n";
-    fout << "\tf();" << "\n";
+    fout << "    f();" << "\n";
     fout << "}";
 
     fout.close();
